@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import { cities } from '../../data/cities.js';
+
+const site = 'https://suncoasthomecheck.com';
+const title = 'Tampa Bay & Gulf Coast Home Watch Areas | Suncoast Home Check';
+const description =
+  'The Tampa Bay and Gulf Coast communities Suncoast Home Check serves — Tampa, St. Petersburg, Clearwater, Sarasota, and the Pinellas beaches. Home watch for second homes, townhomes, and condos in each city.';
+
+const crumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: 'Service Areas', item: `${site}/areas/` },
+  ],
+};
+const areaLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: cities.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${c.name}, FL`,
+    url: `${site}/areas/${c.slug}/`,
+  })),
+};
+---
+<Base title={title} description={description} canonical="/areas/">
+  <section class="page-hero">
+    <img src="/assets/hero.jpg" alt="Tampa Bay Gulf coastline at golden hour" />
+    <div class="scrim"></div>
+    <div class="inner">
+      <p class="eyebrow">Service Areas</p>
+      <h1>Home watch across Tampa Bay &amp; the Gulf Coast.</h1>
+      <div class="gold-line"></div>
+      <p class="intro">From the barrier-island beaches of Pinellas to downtown Tampa and the Sarasota coast, we watch homes, townhomes, and condos for owners who live elsewhere. Explore a local home-watch guide for each community below.</p>
+    </div>
+  </section>
+
+  <div class="map-embed">
+    <iframe
+      title="Map of Suncoast Home Check service areas across Tampa Bay, Florida"
+      src="https://www.google.com/maps?q=Tampa+Bay,+Florida&z=9&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+  <div class="areas-hub">
+    <p class="eyebrow">Communities we watch</p>
+    <h2>Choose your city.</h2>
+    <div class="gold-line"></div>
+    <div class="areas-hub-grid">
+      {cities.map((c) => (
+        <a class="area-card" href={`/areas/${c.slug}/`}>
+          <h2>{c.name}</h2>
+          <span class="county">{c.county}</span>
+          <span class="go">Home watch in {c.name} &rarr;</span>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <div class="inline-cta">
+    <h2>Not sure if we cover your area?</h2>
+    <a class="btn btn-gold" href="/contact/">Get a Free Quote</a>
+    <a class="btn btn-navy" href="tel:17276412419">Call 727-641-2419</a>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(crumbLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(areaLd)} />
+</Base>

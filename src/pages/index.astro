@@ -1,0 +1,140 @@
+---
+import Base from '../layouts/Base.astro';
+const title = 'Suncoast Home Check | Tampa Bay Home Watch';
+const description =
+  'Professional home watch across Tampa Bay & the Gulf Coast for second homes, townhomes, and condos — scheduled checks with a dated photo report every visit. Ideal for snowbirds, out-of-state owners, and vacant homes listed for sale.';
+---
+<Base title={title} description={description} canonical="/">
+  <section class="hero">
+    <img id="calm" class="layer" src="/assets/hero.jpg" alt="Calm sunny Florida coastal home" />
+    <img id="storm" class="layer" src="/assets/hero-storm.jpg" alt="The same home during a Gulf-coast storm" />
+    <div id="mist"></div><div id="darken"></div><canvas id="rain"></canvas><div id="flash"></div><div class="scrim"></div>
+    <div class="copy"><div class="stack">
+      <div class="phase" data-i="0"><p class="eyebrow">Tampa Bay / Gulf Coast · Home Watch</p><h1>Your Florida home, looked after through every season.</h1><div class="gold-line"></div><p>Scheduled checks and a dated photo report after every visit.</p></div>
+      <div class="phase" data-i="1"><p class="eyebrow">When the skies turn</p><h1>When the storms roll in and you're a thousand miles away…</h1></div>
+      <div class="phase" data-i="2"><p class="eyebrow">Peace of mind</p><h1>…someone's here, watching over your home.</h1><a class="cta" href="/contact/">Get a Free Quote →</a></div>
+    </div></div>
+    <div class="dots"><i class="act"></i><i></i><i></i></div>
+  </section>
+
+  <div class="trust"><div class="wrap">
+    <div><b>✓</b> Dated photo report every visit</div>
+    <div><b>✓</b> Licensed &amp; insured</div>
+    <div><b>✓</b> Local, trusted &amp; responsive</div>
+    <div><b>✓</b> Storm-season ready</div>
+  </div></div>
+
+  <section class="section" id="how"><div class="wrap">
+    <div class="head">
+      <p class="eyebrow">What we check on every visit</p>
+      <h2>A thorough walk-through, inside and out.</h2>
+      <p>Every visit follows the same careful checklist — then you get photos and a report the same day, wherever you are.</p>
+    </div>
+    <div class="grid3">
+      <div class="card"><div class="ic">🏠</div><h3>Interior &amp; Exterior</h3><p>A full walk of the home and grounds, checking for anything out of place since the last visit.</p></div>
+      <div class="card"><div class="ic">💧</div><h3>Water, Leaks &amp; Mold</h3><p>Run faucets, flush toilets, and check under sinks and ceilings for leaks, moisture, and early mold.</p></div>
+      <div class="card"><div class="ic">❄️</div><h3>AC &amp; Humidity</h3><p>Confirm the AC is running and the thermostat and humidity are in the safe range for a closed-up home.</p></div>
+      <div class="card"><div class="ic">🔒</div><h3>Doors, Windows &amp; Security</h3><p>Check that everything is locked, secure, and undisturbed — no signs of entry or damage.</p></div>
+      <div class="card"><div class="ic">🌀</div><h3>Storm &amp; Roof Check</h3><p>Look for storm, wind, or roof damage — with priority pre- and post-storm visits during hurricane season.</p></div>
+      <div class="card"><div class="ic">📬</div><h3>Mail, Packages &amp; More</h3><p>Collect mail and flyers so the home never looks empty, plus optional vendor meets and arrival prep.</p></div>
+    </div>
+  </div></section>
+
+  <section class="section" id="who"><div class="wrap"><div class="about">
+    <img src="/assets/condos.jpg" alt="Florida homes, townhomes, and condos watched by Suncoast Home Check" style="width:100%;object-fit:cover;aspect-ratio:16/11" />
+    <div>
+      <p class="eyebrow">Who it's for</p>
+      <h2>Homes, townhomes &amp; condos — watched while you're away.</h2>
+      <div class="gold-line"></div>
+      <p style="font-size:17px;color:var(--slate);margin-bottom:14px">Second-home and seasonal owners, snowbirds, and out-of-state or overseas owners — whether you own a single-family home, a townhome, or a beachfront condo.</p>
+      <p style="font-size:17px;color:var(--slate)"><strong>Selling a Florida home you don't live in?</strong> With so many homes on the market, a vacant listing needs eyes on it too. We keep it clean, secure, and showing-ready, catch problems early, and give you dated proof of care for your insurer — and peace of mind for you and your buyers.</p>
+    </div>
+  </div></div></section>
+
+  <div class="quote"><div class="wrap">
+    <p>"You shouldn't have to wonder about your Florida home from a thousand miles away. That's my job — to check on it like it's my own, and show you."</p>
+    <span>Bryan Alan Manly · Founder</span>
+  </div></div>
+
+  <section class="section band" id="plans"><div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Simple monthly plans</p>
+      <h2>Choose the level of care that fits your home.</h2>
+      <p>Every plan includes the full checklist and a photo report after each visit. Bill monthly on autopay — pause or adjust anytime.</p>
+    </div>
+    <div class="plans">
+      <div class="plan"><h3>Essential</h3><div class="price">$149<small>/mo</small> <span class="minterm">3-mo. min</span></div><p style="color:var(--muted);font-size:14px">Every-other-week visits</p>
+        <ul><li>Full interior &amp; exterior check</li><li>Photo report every visit</li><li>Leak, mold &amp; humidity monitoring</li><li>Mail &amp; package pickup</li></ul>
+        <a class="btn btn-navy" href="/contact/">Get Started</a></div>
+      <div class="plan featured"><span class="tag">Most Popular</span><h3>Standard</h3><div class="price">$249<small>/mo</small> <span class="minterm">3-mo. min</span></div><p style="color:var(--muted);font-size:14px">Weekly visits</p>
+        <ul><li>Everything in Essential</li><li>Weekly visits</li><li>Priority storm-season checks</li><li>Vendor coordination</li></ul>
+        <a class="btn btn-gold" href="/contact/">Get Started</a></div>
+      <div class="plan"><h3>Premium</h3><div class="price">$349<small>/mo</small> <span class="minterm">3-mo. min</span></div><p style="color:var(--muted);font-size:14px">Weekly + concierge</p>
+        <ul><li>Everything in Standard</li><li>Arrival prep</li><li>AC filter replacement</li><li>Priority pre/post-storm response</li><li>Key-holder &amp; errands</li></ul>
+        <a class="btn btn-navy" href="/contact/">Get Started</a></div>
+    </div>
+    <p class="pricing-note">Sample pricing shown — final plans confirmed after a quick look at your home and needs. Additional one-off services available for an extra fee. <a href="/plans/" style="color:var(--gold);font-weight:700">See full plans &amp; add-ons →</a></p>
+  </div></section>
+
+  <section class="section" id="areas"><div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Where we watch</p>
+      <h2>Serving Tampa Bay &amp; the Gulf Coast.</h2>
+      <p>From the barrier-island beaches to the mainland, we cover the communities where second homes need a trusted local eye.</p>
+    </div>
+    <div class="chips">
+      <a class="chip" href="/areas/tampa/">Tampa</a><a class="chip" href="/areas/st-petersburg/">St. Petersburg</a><a class="chip" href="/areas/clearwater/">Clearwater</a><a class="chip" href="/areas/sarasota/">Sarasota</a><a class="chip" href="/areas/safety-harbor/">Safety Harbor</a><a class="chip" href="/areas/belleair/">Belleair</a><a class="chip" href="/areas/belleair-beach/">Belleair Beach</a><a class="chip" href="/areas/indian-rocks-beach/">Indian Rocks Beach</a><a class="chip" href="/areas/indian-shores/">Indian Shores</a><a class="chip" href="/areas/redington-beach/">Redington Beach</a><a class="chip" href="/areas/madeira-beach/">Madeira Beach</a><a class="chip" href="/areas/st-pete-beach/">St Pete Beach</a>
+    </div>
+  </div></section>
+
+  <section class="section band" id="about"><div class="wrap"><div class="about">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>A local name you already know.</h2>
+      <div class="gold-line"></div>
+      <p style="font-size:17px;color:var(--slate);margin-bottom:14px">Suncoast Home Check is run by Bryan Alan Manly — a longtime Tampa Bay real estate advisor who knows these neighborhoods, and the people who own homes here, better than anyone.</p>
+      <p style="font-size:17px;color:var(--slate)">When you're up north or overseas, Bryan is the trusted set of eyes on your property: responsive, thorough, and treating every home like his own.</p>
+    </div>
+    <img src="/assets/bryan.png" alt="Bryan Alan Manly, founder of Suncoast Home Check" style="width:100%;max-height:580px;object-fit:cover;object-position:center top" />
+  </div></div></section>
+
+  <section class="ctaband" id="quote"><div class="wrap">
+    <h2>Heading back north for the season?</h2>
+    <p>Get a free quote and a simple plan to keep your Florida home safe, checked, and cared for while you're away.</p>
+    <a class="btn btn-gold" href="/contact/">Get My Free Quote →</a>
+  </div></section>
+
+  <script is:inline>
+  (function(){
+    const storm=document.getElementById('storm'), calm=document.getElementById('calm');
+    const darken=document.getElementById('darken'), mist=document.getElementById('mist'), flash=document.getElementById('flash');
+    const phases=[...document.querySelectorAll('.hero .phase')], dots=[...document.querySelectorAll('.hero .dots i')];
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const c=document.getElementById('rain'), ctx=c.getContext('2d'); let W,H,drops=[],dpr=1;
+    function fit(){dpr=Math.min(devicePixelRatio||1,1.5);W=c.width=c.offsetWidth*dpr;H=c.height=c.offsetHeight*dpr;
+      const n=innerWidth<700?150:460;drops=[];for(let i=0;i<n;i++){const near=Math.random();drops.push({x:Math.random()*W,y:Math.random()*H,l:(7+near*22)*dpr,s:(7+near*12)*dpr,a:0.12+near*0.28,w:0.8+near*1.2});}}
+    fit(); addEventListener('resize',fit);
+    const smooth=t=>t*t*(3-2*t);
+    const CYCLE=15000; const t0=performance.now();
+    function stormAt(p){ if(p<0.20) return 0; if(p<0.36) return smooth((p-0.20)/0.16); if(p<0.58) return 1; if(p<0.74) return 1-smooth((p-0.58)/0.16); return 0; }
+    function textIndex(p){ if(p<0.20||p>=0.78) return (p>=0.78?2:0); if(p>=0.40&&p<0.58) return 1; return -1; }
+    let flashV=0;
+    function frame(now){
+      const p=((now-t0)%CYCLE)/CYCLE; const s=reduce?0:stormAt(p);
+      const drift=Math.sin((now/1000)*0.5)*6*s;
+      storm.style.opacity=s.toFixed(3); storm.style.transform='scale('+(1.01+s*0.06)+') translateX('+drift+'px)';
+      calm.style.transform='scale('+(1.01+Math.sin(now/9000)*0.01)+')';
+      darken.style.opacity=(s*0.9).toFixed(3); mist.style.opacity=(s*0.8).toFixed(3);
+      let ti=reduce?0:textIndex(p);
+      phases.forEach((el,i)=>el.classList.toggle('on', i===ti));
+      dots.forEach((d,i)=>d.classList.toggle('act', i===(ti<0?(p<0.4?0:(p<0.75?1:2)):ti)));
+      if(!reduce){ if(s>0.55&&Math.random()<0.012*s) flashV=0.5+Math.random()*0.5; flashV*=0.85; flash.style.opacity=(flashV*s).toFixed(3);}
+      ctx.clearRect(0,0,W,H);
+      if(s>0.02&&!reduce){const wind=(10+s*13)*dpr;const active=Math.floor(drops.length*s);
+        for(let i=0;i<active;i++){const d=drops[i];ctx.strokeStyle='rgba(206,219,233,'+(d.a*s)+')';ctx.lineWidth=d.w;ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x+wind*(d.l/15),d.y+d.l);ctx.stroke();d.y+=d.s*(1+s*1.4);d.x+=wind*0.16;if(d.y>H){d.y=-20;d.x=Math.random()*W-wind*4;}}}
+      requestAnimationFrame(frame);
+    }
+    if(reduce){ phases[0].classList.add('on'); } else { requestAnimationFrame(frame); }
+  })();
+  </script>
+</Base>

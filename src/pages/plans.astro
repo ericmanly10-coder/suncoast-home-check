@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+const title = 'Home Watch Plans & Pricing | Suncoast Home Check — Tampa Bay';
+const description =
+  'Suncoast Home Check plans for Tampa Bay homes, townhomes, and condos: Essential $149, Standard $249, and Premium $349 per month, plus add-ons. Monthly autopay, 3-month minimum.';
+---
+<Base title={title} description={description} canonical="/plans/">
+  <section class="page-hero">
+    <img src="/assets/hero.jpg" alt="Florida coastal home under a home-watch plan from Suncoast Home Check" />
+    <div class="scrim"></div>
+    <div class="inner">
+      <p class="eyebrow">Plans &amp; Pricing</p>
+      <h1>Choose the level of care that fits your home.</h1>
+      <div class="gold-line"></div>
+      <p class="intro">Every plan covers the full checklist and a dated photo report after each visit — for homes, townhomes, and condos across Tampa Bay.</p>
+    </div>
+  </section>
+
+  <section class="section"><div class="wrap">
+    <div class="plans">
+      <div class="plan"><h3>Essential</h3><div class="price">$149<small>/mo</small> <span class="minterm">3-mo. min</span></div><p style="color:var(--muted);font-size:14px">Every-other-week visits</p>
+        <ul><li>Full interior &amp; exterior check</li><li>Photo report every visit</li><li>Leak, mold &amp; humidity monitoring</li><li>Doors, windows &amp; security check</li><li>Mail &amp; package pickup</li></ul>
+        <a class="btn btn-navy" href="/contact/">Get Started</a></div>
+      <div class="plan featured"><span class="tag">Most Popular</span><h3>Standard</h3><div class="price">$249<small>/mo</small> <span class="minterm">3-mo. min</span></div><p style="color:var(--muted);font-size:14px">Weekly visits</p>
+        <ul><li>Everything in Essential</li><li>Weekly visits</li><li>Priority storm-season checks</li><li>Vendor coordination &amp; meets</li><li>Faster response if we find an issue</li></ul>
+        <a class="btn btn-gold" href="/contact/">Get Started</a></div>
+      <div class="plan"><h3>Premium</h3><div class="price">$349<small>/mo</small> <span class="minterm">3-mo. min</span></div><p style="color:var(--muted);font-size:14px">Weekly + concierge</p>
+        <ul><li>Everything in Standard</li><li>Arrival prep before you return</li><li>AC filter replacement</li><li>Priority pre/post-storm response</li><li>Key-holder &amp; errands</li></ul>
+        <a class="btn btn-navy" href="/contact/">Get Started</a></div>
+    </div>
+    <p class="pricing-note">Sample pricing shown — final plans confirmed after a quick look at your home and needs. Additional one-off services available for an extra fee. Billed monthly on autopay, with a 3-month minimum; pause or adjust between seasons.</p>
+  </div></section>
+
+  <section class="section band"><div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Add-ons</p>
+      <h2>One-off services when you need them.</h2>
+      <p>Add any of these to your plan or request them individually — priced per service after a quick look at your home.</p>
+    </div>
+    <div class="addons">
+      <div class="addon"><h3>Pre- &amp; post-storm check</h3><p>An extra visit before a named storm to secure the home, and one after to inspect for wind, water, and roof damage — with photos.</p></div>
+      <div class="addon"><h3>Vendor &amp; contractor meets</h3><p>We meet cleaners, landscapers, pest control, HVAC techs, or contractors so work gets done while you're away.</p></div>
+      <div class="addon"><h3>Arrival &amp; departure prep</h3><p>Turn on the AC, stock the fridge, air out the home before you land — or close it down properly when you head back north.</p></div>
+      <div class="addon"><h3>AC filter replacement</h3><p>We swap your AC filters on schedule to keep air moving and humidity down in a closed-up home (included with Premium).</p></div>
+      <div class="addon"><h3>Car start &amp; drive</h3><p>Start and run your vehicle periodically so the battery and tires stay healthy while the home sits empty.</p></div>
+      <div class="addon"><h3>Mail forwarding &amp; handling</h3><p>Collect, forward, or scan mail and packages so nothing piles up and the home never looks unoccupied.</p></div>
+    </div>
+  </div></section>
+
+  <div class="inline-cta">
+    <h2>Not sure which plan is right?</h2>
+    <a class="btn btn-gold" href="/contact/">Get a Free Quote</a>
+    <a class="btn btn-navy" href="tel:17276412419">Call 727-641-2419</a>
+  </div>
+</Base>

@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Home Watch FAQ | Suncoast Home Check — Tampa Bay';
+const description =
+  'Common questions about home watch in Tampa Bay — what we check, key custody, insurance vacancy clauses, how reports work, pausing service, condos and townhomes, and vacant listed homes.';
+
+const faqs = [
+  {
+    q: 'What exactly do you check on each visit?',
+    a: "Every visit follows the same checklist: a full interior and exterior walk-through; running faucets and flushing toilets; checking for leaks, moisture, and early mold; confirming the AC is running and humidity is in range; verifying doors and windows are locked and secure; looking for storm, roof, or pest damage; confirming key appliances work; and collecting mail and packages. You then receive a dated photo report the same day.",
+  },
+  {
+    q: 'How do you handle keys and access to my home?',
+    a: "Access is arranged securely during onboarding. We prefer lockboxes or smart locks with a unique code where possible, and we keep any keys and codes stored securely and documented. We only enter your home for scheduled visits and agreed services, and every entry is logged in your photo report.",
+  },
+  {
+    q: 'Will home watch help with my insurance vacancy clause?',
+    a: "Many Florida homeowners and condo policies reduce or void coverage when a home sits unoccupied and unchecked for an extended period. Regular, documented home watch shows your property is being monitored on a schedule, and the dated photo reports give you a record of care. We're not insurance advisors, so confirm your specific requirements with your carrier — but our reports are exactly the kind of documentation insurers look for.",
+  },
+  {
+    q: 'How do the reports work, and how fast do I get them?',
+    a: "After each visit you receive a time-stamped report with photos from around your property, sent the same day by email. If we find anything out of the ordinary, you hear from us right away with photos and a recommended next step — you don't wait for the routine report.",
+  },
+  {
+    q: 'Do you cover condos and townhomes, or only single-family homes?',
+    a: "All three. We watch single-family homes, townhomes, and condos — from mainland neighborhoods to beachfront high-rises. Condos and townhomes have their own quirks, like shared walls, HOA rules, and humidity in a sealed unit, and we account for those on every visit.",
+  },
+  {
+    q: 'Can I pause or cancel my plan when I come back for the season?',
+    a: "Yes. Plans bill monthly on autopay with a 3-month minimum, and you can pause or adjust between seasons when you're back in your Florida home. Just let us know your dates and we'll set the schedule around them.",
+  },
+  {
+    q: 'What happens if you find damage or a problem?',
+    a: "You get an immediate heads-up with photos and a clear description of what we found. With your go-ahead, we can coordinate vendors and contractors, meet them at the home, and keep you updated — so a small issue gets handled before it becomes a big one, even while you're away.",
+  },
+  {
+    q: "I'm selling a Florida home I don't live in — can you watch a vacant listing?",
+    a: "Absolutely. A vacant listed home still needs eyes on it. We keep it clean, secure, and showing-ready, catch problems early, and give you dated proof of care for your insurer, your agent, and your buyers — so nothing derails a sale while the home sits empty.",
+  },
+  {
+    q: 'How often do you visit?',
+    a: "It depends on your plan — every-other-week with Essential, or weekly with Standard and Premium — plus priority pre- and post-storm visits during hurricane season. We'll recommend a cadence based on your home, its exposure, and how long it sits unoccupied.",
+  },
+  {
+    q: 'What areas do you serve?',
+    a: "We serve Tampa Bay and the Gulf Coast — Tampa, St. Petersburg, Clearwater, Sarasota, Safety Harbor, Belleair, Belleair Beach, Indian Rocks Beach, Indian Shores, Redington Beach, Madeira Beach, and St Pete Beach. If you're nearby and not sure, just ask.",
+  },
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<Base title={title} description={description} canonical="/faq/">
+  <section class="page-hero">
+    <img src="/assets/hero.jpg" alt="Palm-lined Florida Gulf-coast home at golden hour" />
+    <div class="scrim"></div>
+    <div class="inner">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h1>Home watch, answered.</h1>
+      <div class="gold-line"></div>
+      <p class="intro">Straight answers to what owners ask most about watching a Tampa Bay home, townhome, or condo from afar.</p>
+    </div>
+  </section>
+
+  <div class="faq-list">
+    {faqs.map((f) => (
+      <article class="faq-item">
+        <h2>{f.q}</h2>
+        <p>{f.a}</p>
+      </article>
+    ))}
+  </div>
+
+  <div class="inline-cta">
+    <h2>Still have a question?</h2>
+    <a class="btn btn-gold" href="/contact/">Get a Free Quote</a>
+    <a class="btn btn-navy" href="tel:17276412419">Call 727-641-2419</a>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+</Base>

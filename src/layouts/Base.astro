@@ -1,0 +1,153 @@
+---
+const site = 'https://suncoasthomecheck.com';
+const { title, description, canonical, ogImage } = Astro.props;
+const canonicalURL = new URL(canonical ?? Astro.url.pathname, site).href;
+const socialImage = `${site}${ogImage ?? '/assets/hero.jpg'}`;
+
+// Paste the GA4 measurement id (starts with "G-") here to turn on analytics.
+// Left empty on purpose — the gtag snippet only renders when this is non-empty.
+const GA_ID = '';
+
+// Mark the current top-level route as active in the nav.
+const path = Astro.url.pathname;
+const navLinks = [
+  { href: '/how-it-works/', label: 'How It Works' },
+  { href: '/plans/', label: 'Plans' },
+  { href: '/areas/', label: 'Service Areas' },
+  { href: '/about/', label: 'About' },
+  { href: '/faq/', label: 'FAQ' },
+];
+const isActive = (href) => (href === '/' ? path === '/' : path.startsWith(href));
+
+// Site-wide LocalBusiness / Service JSON-LD.
+const businessLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  name: 'Suncoast Home Check',
+  url: site,
+  image: socialImage,
+  description:
+    'Professional home watch across Tampa Bay and Florida’s Gulf Coast for second homes, townhomes, and condos — scheduled checks with a dated photo report every visit.',
+  telephone: '+1-727-641-2419',
+  email: 'bryan.manly@compass.com',
+  areaServed: 'Tampa Bay, Florida',
+  address: { '@type': 'PostalAddress', addressRegion: 'FL', addressLocality: 'Tampa Bay', addressCountry: 'US' },
+  founder: { '@type': 'Person', name: 'Bryan Alan Manly' },
+  makesOffer: {
+    '@type': 'Offer',
+    itemOffered: {
+      '@type': 'Service',
+      name: 'Home watch',
+      serviceType: 'Home watch',
+      areaServed: 'Tampa Bay, Florida',
+    },
+  },
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:site_name" content="Suncoast Home Check" />
+  <meta property="og:image" content={socialImage} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <link rel="icon" type="image/png" href="/assets/icon-clear.png" />
+  <link rel="apple-touch-icon" href="/assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <script type="application/ld+json" set:html={JSON.stringify(businessLd)} />
+  {GA_ID && (
+    <>
+      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+      <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}></script>
+    </>
+  )}
+</head>
+<body>
+  <header>
+    <div class="wrap"><nav>
+      <a class="brand" href="/" aria-label="Suncoast Home Check home">
+        <span class="mark"><img src="/assets/icon-clear.png" alt="Suncoast Home Check icon" /></span>
+        <span><b>Suncoast Home Check</b><small>Tampa Bay Home Watch</small></span>
+      </a>
+      <div class="navlinks">
+        {navLinks.map((l) => (
+          <a href={l.href} class={isActive(l.href) ? 'active' : undefined}>{l.label}</a>
+        ))}
+        <a class="menu-only phone-in-menu" href="tel:17276412419">Call 727-641-2419</a>
+        <a class="menu-only btn btn-gold cta-in-menu" href="/contact/">Get a Free Quote</a>
+      </div>
+      <div class="nav-right">
+        <a class="phone" href="tel:17276412419">727-641-2419</a>
+        <a class="btn btn-gold" href="/contact/">Get a Free Quote</a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav></div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer><div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>Suncoast Home Check</h4>
+        <p style="max-width:34ch">Professional home watch for second-home owners across Tampa Bay and Florida&rsquo;s Gulf Coast. Homes, townhomes, and condos &mdash; looked after while you&rsquo;re away.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/plans/">Plans</a>
+        <a href="/areas/">Service Areas</a>
+        <a href="/about/">About</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Get a Free Quote</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:17276412419">727-641-2419</a>
+        <a href="mailto:bryan.manly@compass.com">bryan.manly@compass.com</a>
+        <p>Tampa Bay, Florida</p>
+        <p class="fsunset">Don&rsquo;t Forget to Catch Your Sunset.</p>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>&copy; 2026 Suncoast Home Check &middot; Tampa Bay, FL &middot; Licensed &amp; insured. Built by <a href="https://locallionpro.com/" target="_blank" rel="noreferrer">Local Lion Pro</a>.</span>
+      <div class="legal"><a href="/privacy/">Privacy Policy</a> &middot; <a href="/terms/">Terms of Use</a></div>
+    </div>
+  </div></footer>
+
+  <script is:inline>
+    // Mobile hamburger: toggle nav-open on the header, close on link tap.
+    const header = document.querySelector('header');
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle && header) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = header.classList.toggle('nav-open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.querySelectorAll('.navlinks a').forEach((a) =>
+        a.addEventListener('click', () => {
+          header.classList.remove('nav-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        })
+      );
+    }
+  </script>
+</body>
+</html>

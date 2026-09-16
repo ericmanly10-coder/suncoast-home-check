@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# www → non-www canonical redirect (also set apex as primary domain in Netlify UI)
+[[redirects]]
+  from = "https://www.suncoasthomecheck.com/*"
+  to = "https://suncoasthomecheck.com/:splat"
+  status = 301
+  force = true

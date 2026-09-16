@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import { cities } from '../../data/cities.js';
+
+export function getStaticPaths() {
+  return cities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const site = 'https://suncoasthomecheck.com';
+const canonical = `/areas/${city.slug}/`;
+const title = `Home Watch in ${city.name}, FL | Suncoast Home Check`;
+const description = `Professional home watch in ${city.name}, ${city.county} for second homes, townhomes, and condos. Scheduled checks with a dated photo report every visit — for snowbirds, out-of-state owners, and vacant homes.`;
+
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Home watch',
+  name: `Home Watch in ${city.name}, FL`,
+  url: `${site}${canonical}`,
+  areaServed: { '@type': 'City', name: `${city.name}, FL` },
+  provider: {
+    '@type': 'HomeAndConstructionBusiness',
+    name: 'Suncoast Home Check',
+    telephone: '+1-727-641-2419',
+    email: 'bryan.manly@compass.com',
+    founder: { '@type': 'Person', name: 'Bryan Alan Manly' },
+    areaServed: 'Tampa Bay, Florida',
+  },
+};
+const crumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: 'Service Areas', item: `${site}/areas/` },
+    { '@type': 'ListItem', position: 3, name: city.name, item: `${site}${canonical}` },
+  ],
+};
+---
+<Base title={title} description={description} canonical={canonical}>
+  <section class="page-hero">
+    <img src="/assets/condos.jpg" alt={`${city.name}, Florida homes, townhomes, and condos watched by Suncoast Home Check`} />
+    <div class="scrim"></div>
+    <div class="inner">
+      <p class="eyebrow">{city.county} · Tampa Bay / Gulf Coast</p>
+      <h1>Home watch in {city.name}, FL.</h1>
+      <div class="gold-line"></div>
+      <p class="intro">{city.hook}</p>
+    </div>
+  </section>
+
+  <div class="city-intro">
+    <p class="eyebrow">Why home watch in {city.name}</p>
+    <p>{city.intro}</p>
+    <p>Every Suncoast Home Check visit in {city.name} follows the same careful checklist — interior and exterior, water and leaks, AC and humidity, doors and security, storm and roof, plus mail and packages — and you get a dated photo report the same day, whether you own a single-family home, a townhome, or a condo.</p>
+  </div>
+
+  <section class="city-block">
+    <p class="eyebrow">On the ground in {city.name}</p>
+    <h2>Neighborhoods we watch.</h2>
+    <div class="city-chips">
+      {city.neighborhoods.map((n) => (<span class="chip">{n}</span>))}
+    </div>
+  </section>
+
+  <div class="inline-cta">
+    <h2>Keep watch on your {city.name} home.</h2>
+    <a class="btn btn-gold" href="/contact/">Get a Free Quote</a>
+    <a class="btn btn-navy" href="/plans/">See Plans</a>
+  </div>
+
+  <section class="city-block">
+    <p class="eyebrow">Nearby</p>
+    <h2>Other communities we serve.</h2>
+    <div class="city-chips">
+      {city.nearby.map(([name, slug]) => (<a class="chip chip-link" href={`/areas/${slug}/`}>{name}</a>))}
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(crumbLd)} />
+</Base>

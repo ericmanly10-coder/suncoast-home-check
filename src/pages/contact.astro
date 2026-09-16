@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+const title = 'Get a Free Quote | Suncoast Home Check — Tampa Bay Home Watch';
+const description =
+  'Get a free home-watch quote from Suncoast Home Check. Tell us about your Tampa Bay home, townhome, or condo and Bryan Alan Manly will follow up with a simple plan. Call 727-641-2419.';
+---
+<Base title={title} description={description} canonical="/contact/">
+  <section class="page-hero">
+    <img src="/assets/hero.jpg" alt="Florida Gulf-coast home at golden hour" />
+    <div class="scrim"></div>
+    <div class="inner">
+      <p class="eyebrow">Get a Free Quote</p>
+      <h1>Let's keep watch on your home.</h1>
+      <div class="gold-line"></div>
+      <p class="intro">Tell us a little about your property and how it's used. Bryan will follow up with a simple plan and a free quote — no pressure.</p>
+    </div>
+  </section>
+
+  <div class="contact-layout">
+    <section class="contact-card">
+      <h2>Suncoast Home Check</h2>
+      <p>Bryan Alan Manly, Founder · Tampa Bay Home Watch</p>
+      <a href="tel:17276412419">727-641-2419</a>
+      <a href="mailto:bryan.manly@compass.com">bryan.manly@compass.com</a>
+      <p style="margin-top:18px;color:#c9d5e4;font-size:14px">Serving homes, townhomes &amp; condos across Tampa Bay &amp; the Gulf Coast.</p>
+    </section>
+
+    <form class="contact-form" name="quote" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" aria-label="Get a free home-watch quote">
+      <input type="hidden" name="form-name" value="quote" />
+      <p class="hidden">
+        <label>Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field" /></label>
+      </p>
+      <label>Name<input type="text" name="name" autocomplete="name" required /></label>
+      <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+      <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
+      <label>Property type
+        <select name="property-type" required>
+          <option value="">Please select…</option>
+          <option>Home</option>
+          <option>Townhome</option>
+          <option>Condo</option>
+        </select>
+      </label>
+      <label>City / area<input type="text" name="city" autocomplete="off" placeholder="e.g. St Pete Beach, Clearwater…" /></label>
+      <label>Plan interest
+        <select name="plan-interest">
+          <option value="">Select a plan…</option>
+          <option>Essential</option>
+          <option>Standard</option>
+          <option>Premium</option>
+          <option>Not sure</option>
+        </select>
+      </label>
+      <label>Roughly when is the property unoccupied?<input type="text" name="unoccupied" autocomplete="off" placeholder="e.g. May–October, most of the year, while it's listed…" /></label>
+      <label>Anything else we should know?<textarea name="message" rows="5"></textarea></label>
+      <button class="btn btn-gold" type="submit">Get My Free Quote</button>
+      <p class="form-note">We'll only use your details to prepare a quote and follow up — never shared.</p>
+    </form>
+  </div>
+</Base>

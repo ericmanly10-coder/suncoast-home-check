@@ -5,7 +5,10 @@ const description = "A little reminder from Suncoast Home Check — don't forget
 ---
 <Base title={title} description={description} canonical="/sunset/">
   <section class="sunset-stage">
-    <img class="sunset-img" src="/assets/sunset.jpg" alt="A Florida Gulf Coast beach at golden-hour sunset" />
+    <video class="sunset-img" autoplay loop muted playsinline poster="/assets/sunset.jpg" aria-label="A Florida Gulf Coast beach at golden-hour sunset with gentle moving waves">
+      <source src="/assets/sunset.mp4" type="video/mp4" />
+      <img src="/assets/sunset.jpg" alt="A Florida Gulf Coast beach at golden-hour sunset" />
+    </video>
     <div class="sunset-scrim"></div>
     <div class="sunset-copy">
       <p class="sunset-tag">Don't forget to catch your sunset.</p>

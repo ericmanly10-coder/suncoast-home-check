@@ -40,7 +40,7 @@ const crumbLd = {
 ---
 <Base title={title} description={description} canonical={canonical}>
   <section class="page-hero">
-    <img src="/assets/condos.jpg" alt={`${city.name}, Florida homes, townhomes, and condos watched by Suncoast Home Check`} />
+    <img src={city.image || '/assets/condos.jpg'} alt={`${city.name}, Florida homes, townhomes, and condos watched by Suncoast Home Check`} />
     <div class="scrim"></div>
     <div class="inner">
       <p class="eyebrow">{city.county} · Tampa Bay / Gulf Coast</p>

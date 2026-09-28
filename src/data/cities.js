@@ -5,6 +5,7 @@
 export const cities = [
   {
     slug: 'tampa',
+    image: '/assets/hero-tampa.jpg',
     name: 'Tampa',
     county: 'Hillsborough County',
     intro:
@@ -16,6 +17,7 @@ export const cities = [
   },
   {
     slug: 'st-petersburg',
+    image: '/assets/hero-st-petersburg.jpg',
     name: 'St. Petersburg',
     county: 'Pinellas County',
     intro:
@@ -27,6 +29,7 @@ export const cities = [
   },
   {
     slug: 'clearwater',
+    image: '/assets/hero-clearwater.jpg',
     name: 'Clearwater',
     county: 'Pinellas County',
     intro:
@@ -38,6 +41,7 @@ export const cities = [
   },
   {
     slug: 'sarasota',
+    image: '/assets/hero-sarasota.jpg',
     name: 'Sarasota',
     county: 'Sarasota County',
     intro:
@@ -49,6 +53,7 @@ export const cities = [
   },
   {
     slug: 'safety-harbor',
+    image: '/assets/hero-safety-harbor.jpg',
     name: 'Safety Harbor',
     county: 'Pinellas County',
     intro:
@@ -60,6 +65,7 @@ export const cities = [
   },
   {
     slug: 'belleair',
+    image: '/assets/hero-belleair.jpg',
     name: 'Belleair',
     county: 'Pinellas County',
     intro:
@@ -71,6 +77,7 @@ export const cities = [
   },
   {
     slug: 'belleair-beach',
+    image: '/assets/hero-belleair-beach.jpg',
     name: 'Belleair Beach',
     county: 'Pinellas County',
     intro:
@@ -82,6 +89,7 @@ export const cities = [
   },
   {
     slug: 'indian-rocks-beach',
+    image: '/assets/hero-indian-rocks-beach.jpg',
     name: 'Indian Rocks Beach',
     county: 'Pinellas County',
     intro:
@@ -93,6 +101,7 @@ export const cities = [
   },
   {
     slug: 'indian-shores',
+    image: '/assets/hero-indian-shores.jpg',
     name: 'Indian Shores',
     county: 'Pinellas County',
     intro:
@@ -104,6 +113,7 @@ export const cities = [
   },
   {
     slug: 'redington-beach',
+    image: '/assets/hero-redington-beach.jpg',
     name: 'Redington Beach',
     county: 'Pinellas County',
     intro:
@@ -115,6 +125,7 @@ export const cities = [
   },
   {
     slug: 'madeira-beach',
+    image: '/assets/hero-madeira-beach.jpg',
     name: 'Madeira Beach',
     county: 'Pinellas County',
     intro:
@@ -126,6 +137,7 @@ export const cities = [
   },
   {
     slug: 'st-pete-beach',
+    image: '/assets/hero-st-pete-beach.jpg',
     name: 'St Pete Beach',
     county: 'Pinellas County',
     intro:

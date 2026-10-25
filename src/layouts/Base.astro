@@ -130,7 +130,7 @@ const businessLd = {
       </div>
     </div>
     <div class="fbot">
-      <span>&copy; 2026 Suncoast Home Check &middot; Tampa Bay, FL &middot; Licensed &amp; insured. Website by <a href="https://bluecollaraiconsulting.com" target="_blank" rel="noopener">Blue Collar AI Consulting</a>.</span>
+      <span>&copy; 2026 Suncoast Home Check &middot; Tampa Bay, FL &middot; Licensed &amp; insured. Website and chatbot by <a href="https://bluecollaraiconsulting.com" target="_blank" rel="noopener">Blue Collar AI Consulting</a>.</span>
       <div class="legal"><a href="/privacy/">Privacy Policy</a> &middot; <a href="/terms/">Terms of Use</a></div>
     </div>
   </div></footer>
@@ -154,7 +154,10 @@ const businessLd = {
   </script>
 
   <!-- Ava — AI voice + chat assistant (Suncoast Home Check + BAM Real Estate) -->
-  <elevenlabs-convai agent-id="agent_4501m5qn4ca5eqytef85kwcwqa8w"></elevenlabs-convai>
+  <style is:global>
+    @media (max-width: 640px) { elevenlabs-convai { transform: translate(5vw, 2.5vh); } }
+  </style>
+  <elevenlabs-convai agent-id="agent_4501m5qn4ca5eqytef85kwcwqa8w" variant="compact" disable-banner="true" text-contents='{"start_call":"Need help?"}' style="--el-accent:#09233c; --el-accent-hover:#0d3155; --el-accent-active:#061827; --el-base-primary:#09233c;"></elevenlabs-convai>
   <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 </body>
 </html>
